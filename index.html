@@ -9,15 +9,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      background: 
-  linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
-  url('logo.png');
-background-repeat: no-repeat;
-background-position: center;
-background-size: 400px;
-background-attachment: fixed;
-      opacity: 1;
+      background: #f4f6f8; /* quitamos el logo del fondo general */
     }
 
     header {
@@ -45,9 +37,36 @@ background-attachment: fixed;
       text-decoration: underline;
     }
 
-    section {
-      padding: 60px 20px;
+    /* SECCIÓN CENTRAL CON LOGO GRANDE */
+    .hero {
+      position: relative;
+      padding: 80px 20px;
       text-align: center;
+      background-color: #dcdcdc;
+      overflow: hidden;
+    }
+
+    /* Logo centrado ocupando ~90% */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 90%;
+      height: 90%;
+      background-image: url('logo.png'); /* asegúrate que la ruta sea correcta */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain; /* mantiene proporciones */
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    /* Texto encima del logo */
+    .hero h2,
+    .hero p {
+      position: relative;
+      z-index: 1;
     }
 
     footer {
@@ -71,10 +90,17 @@ background-attachment: fixed;
   <a href="contacto.html">CONTACTO</a>
 </nav>
 
-<section>
+<section class="hero">
   <h2>Bienvenidos</h2>
   <p>Ofrecemos servicios de consultoría en gestión para mejorar la eficiencia, organización y resultados de su empresa.</p>
 </section>
+
+<footer>
+  <p>© 2026 Iris del Carmen</p>
+</footer>
+
+</body>
+</html>
 
 <footer>
   <p>© 2026 Iris del Carmen</p>
