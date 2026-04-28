@@ -2,66 +2,81 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Iris del Carmen</title>
+  <title>Iris del Carmen - Consultoría</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      background-image: url('logo.png'); /* aquí irá tu logo */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 300px;
+      background-attachment: fixed;
+      opacity: 1;
     }
 
     header {
-      background: #2c3e50;
+      background-color: #1f3a5f;
+      padding: 15px;
       color: white;
-      padding: 20px;
       text-align: center;
     }
 
+    nav {
+      background-color: #2c5282;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     section {
-      padding: 40px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     footer {
-      background: #2c3e50;
+      background-color: #1f3a5f;
       color: white;
       text-align: center;
       padding: 10px;
-    }
-
-    .btn {
-      background: #27ae60;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Iris del Carmen SpA Consultores</h1>
-    <p>Servicios profesionales</p>
-  </header>
+<header>
+  <h1>Iris del Carmen</h1>
+  <p>Consultoría en Gestión</p>
+</header>
 
-  <section>
-    <h2>Bienvenidos</h2>
-    <p>Ofrecemos servicios de consultoria de gestion, para nuestros clientes.</p>
-  </section>
+<nav>
+  <a href="index.html">INICIO</a>
+  <a href="contacto.html">CONTACTO</a>
+</nav>
 
-  <section>
-    <h2>Contacto</h2>
-    <p>Email: roberto@irisdelcarmen.cl</p>
-    <a class="btn" href="mailto:roberto@irisdelcarmen.cl">Escríbenos</a>
-  </section>
+<section>
+  <h2>Bienvenidos</h2>
+  <p>Ofrecemos servicios de consultoría en gestión para mejorar la eficiencia, organización y resultados de su empresa.</p>
+</section>
 
-  <footer>
-    <p>© 2026 Iris del Carmen</p>
-  </footer>
+<footer>
+  <p>© 2026 Iris del Carmen</p>
+</footer>
 
 </body>
 </html>
