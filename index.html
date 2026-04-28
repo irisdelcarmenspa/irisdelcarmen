@@ -18,17 +18,18 @@
     /* HEADER */
   .top-header {
   background-color: #ffffff;
-  height: 120px;              /* altura total del bloque (ajustable fino) */
+  height: 120px;              /* defines el alto exacto del header */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  overflow: hidden;           /* evita desbordes raros */
 }
 
 .top-header img {
-  max-height: 90px;           /* controla tamaño del logo */
-  height: auto;
+  max-height: 75%;            /* el logo ocupa 3/4 del header */
   width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
     /* NAV */
