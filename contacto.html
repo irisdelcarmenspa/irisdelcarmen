@@ -2,101 +2,177 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <title>Iris del Carmen - Consultoría</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - Iris del Carmen</title>
+
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Fuente más corporativa -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      text-align: center;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #ffffff;
     }
 
-    /* Header */
-    .top-bar {
-      background-color: #ffffff;
-      padding: 20px 0;
+    /* HEADER */
+  .top-header {
+  background-color: #ffffff;
+  height: 100px;              /* defines el alto exacto del header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;           /* evita desbordes raros */
+}
+
+.top-header img {
+  max-height: 75%;            /* el logo ocupa 3/4 del header */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+    /* NAV */
+    nav {
+      background-color: #0b2a5b;
+      display: flex;
+      justify-content: flex-start;
+      padding: 10px 60px;
+      gap: 40px;
     }
 
-    .top-bar img {
-      height: 60px;
-    }
-
-    /* Navbar */
-    .navbar {
-      background-color: #163a6b;
-      padding: 10px 40px;
-      text-align: left;
-    }
-
-    .navbar a {
+    nav a {
       color: white;
       text-decoration: none;
-      margin-right: 20px;
-      font-weight: bold;
-      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
-    /* Main content styled like home */
-    .main {
-      padding: 80px 20px;
-      color: #163a6b;
+    nav a:hover {
+      opacity: 0.8;
     }
 
-    .main h1 {
-      font-size: 32px;
-      margin-bottom: 30px;
+    /* HERO */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 100px 20px 110px;
+      background-color: #e9e9e9;
+      overflow: hidden;
     }
 
-    .contact-box {
-      font-size: 18px;
-      line-height: 2;
+    /* Marca de agua */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      width: 520px;
+      height: 520px;
+      background-image: url('logo.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.06;
+      transform: translate(-50%, -50%);
     }
 
-    .contact-box strong {
-      color: #000;
+    /* FRASE */
+    .hero h2 {
+      position: relative;
+      color: #0b2a5b;
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 35px;
     }
 
-    /* Footer */
-    .footer {
-      background-color: #163a6b;
+    /* TEXTO */
+    .hero p {
+      position: relative;
+      color: #0b2a5b;
+      font-size: 20px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #0b2a5b;
       color: white;
-      padding: 20px 0;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+    }
+
+    /* RESPONSIVE FINO */
+    @media (max-width: 768px) {
+      nav {
+        padding: 10px 20px;
+        gap: 20px;
+      }
+
+      .hero {
+        padding: 70px 15px;
+      }
+
+      .hero h2 {
+        font-size: 22px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero::before {
+        width: 300px;
+        height: 300px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Header with logo -->
-  <div class="top-bar">
-    <img src="logo.png" alt="Iris del Carmen">
-  </div>
+<!-- LOGO -->
+<div class="top-header">
+  <img src="logo.png" alt="Iris del Carmen">
+</div>
 
-  <!-- Navigation -->
-  <div class="navbar">
-    <a href="index.html">INICIO</a>
-    <a href="contacto.html">CONTACTO</a>
-  </div>
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html">INICIO</a>
+  <a href="contacto.html">CONTACTO</a>
+</nav>
 
-  <!-- Contact content styled like home -->
-  <div class="main">
-    <h1>Contacto</h1>
+<!-- HERO -->
+<section class="hero">
+  <h2>Contacto</h2>
 
-    <div class="contact-box">
-      <p><strong>Email:</strong> roberto@irisdelcarmen.cl</p>
-      <p><strong>Teléfono:</strong> +56 9 9449 4294</p>
-    </div>
-  </div>
+  <p>
+    e-mail: roberto@irisdelcarmen.cl
+  </p>
 
-  <!-- Footer -->
-  <div class="footer">
-    © 2026 Iris del Carmen
-  </div>
+<p>
+    Telefono +56 9 9449 4294
+  </p>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Iris del Carmen</p>
+</footer>
 
 </body>
 </html>
-
 </html>
