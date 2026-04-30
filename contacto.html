@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -6,45 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Fuente más corporativa -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       font-family: 'Montserrat', Arial, sans-serif;
       background: #ffffff;
     }
 
-    /* HEADER */
-  .top-header {
-  background-color: #ffffff;
-  height: 100px;              /* defines el alto exacto del header */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;           /* evita desbordes raros */
-}
+    body {
+      display: flex;
+      flex-direction: column;
+    }
 
-.top-header img {
-  max-height: 75%;            /* el logo ocupa 3/4 del header */
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
+    /* HEADER */
+    .top-header {
+      background-color: #ffffff;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .top-header img {
+      max-height: 70%;
+      width: auto;
+      object-fit: contain;
+    }
 
     /* NAV */
     nav {
       background-color: #0b2a5b;
       display: flex;
       justify-content: flex-start;
-      padding: 10px 60px;
+      padding: 8px 60px;
       gap: 40px;
+      flex-shrink: 0;
     }
 
     nav a {
@@ -62,48 +68,94 @@
     /* HERO */
     .hero {
       position: relative;
-      text-align: center;
-      padding: 2px 20px 40px;
       background-color: #e9e9e9;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
       overflow: hidden;
+      text-align: center;
     }
 
     /* Marca de agua */
     .hero::before {
-  content: "";
-  position: absolute;
-  top: 52%;
-  left: 50%;
-  width: 520px;
-  height: 520px;
-  background-image: url('logo.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  opacity: 0.06;
-  transform: translate(-50%, -50%);
-  pointer-events: none;   /* 👈 CLAVE */
-  z-index: 0;             /* 👈 CLAVE */
-}
+      content: "";
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      width: 420px;
+      height: 420px;
+      background-image: url('logo.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.05;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-    /* FRASE */
     .hero h2 {
       position: relative;
       color: #0b2a5b;
-      font-size: 30px;
+      font-size: 26px;
       font-weight: 700;
-      margin-bottom: 35px;
+      margin-bottom: 10px;
+      z-index: 1;
     }
 
-    /* TEXTO */
     .hero p {
       position: relative;
       color: #0b2a5b;
-      font-size: 20px;
-      max-width: 900px;
-      margin: auto;
-      line-height: 1.6;
+      font-size: 18px;
+      margin: 5px 0 15px;
       font-weight: 600;
+      z-index: 1;
+    }
+
+    /* FORM */
+    form {
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 1;
+    }
+
+    input, textarea {
+      padding: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+      height: 70px;
+    }
+
+    button {
+      padding: 10px;
+      background: #0b2a5b;
+      color: white;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    /* CONTACTO TEXTO */
+    .contact-info {
+      position: relative;
+      font-size: 14px;
+      z-index: 1;
     }
 
     /* FOOTER */
@@ -111,35 +163,19 @@
       background-color: #0b2a5b;
       color: white;
       text-align: center;
-      padding: 12px;
-      font-size: 13px;
-      letter-spacing: 0.3px;
+      padding: 8px;
+      font-size: 12px;
+      flex-shrink: 0;
     }
 
-    /* RESPONSIVE FINO */
-    @media (max-width: 768px) {
-      nav {
-        padding: 10px 20px;
-        gap: 20px;
-      }
-
+    /* Ajuste extra para pantallas bajas */
+    @media (max-height: 800px) {
       .hero {
-        padding: 70px 15px;
-      }
-
-      .hero h2 {
-        font-size: 22px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .hero::before {
-        width: 300px;
-        height: 300px;
+        transform: scale(0.95);
+        transform-origin: top center;
       }
     }
+
   </style>
 </head>
 
@@ -160,34 +196,23 @@
 <section class="hero">
   <h2>Contacto</h2>
 
-  <p style="margin-bottom: 30px;">
-    Déjanos tus datos, nosotros te contactamos
-  </p>
+  <p>Déjanos tus datos, nosotros te contactamos</p>
 
-  <form action="https://formspree.io/f/mkoywkoa" method="POST" 
-        style="max-width: 500px; margin: 0 auto 40px; display: flex; flex-direction: column; gap: 12px;">
+  <form action="https://formspree.io/f/mkoywkoa" method="POST">
 
-    <input type="text" name="nombre" placeholder="Nombre" required style="padding:10px; border:1px solid #ccc;">
+    <input type="text" name="nombre" placeholder="Nombre" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="telefono" placeholder="Teléfono">
+    <textarea name="mensaje" placeholder="Mensaje" required></textarea>
 
-    <input type="email" name="email" placeholder="Email" required style="padding:10px; border:1px solid #ccc;">
-
-    <input type="tel" name="telefono" placeholder="Teléfono" style="padding:10px; border:1px solid #ccc;">
-
-    <textarea name="mensaje" placeholder="Mensaje" rows="4" required style="padding:10px; border:1px solid #ccc;"></textarea>
-
-    <button type="submit" style="padding:12px; background:#0b2a5b; color:white; border:none; font-weight:600; cursor:pointer;">
-      Enviar
-    </button>
+    <button type="submit">Enviar</button>
 
   </form>
 
-  <p>
-    <strong>e-mail:</strong> roberto@irisdelcarmen.cl
-  </p>
-
-  <p>
-    <strong>Telefono</strong> +56 9 9449 4294
-  </p>
+  <div class="contact-info">
+    <p><strong>e-mail:</strong> roberto@irisdelcarmen.cl</p>
+    <p><strong>Teléfono:</strong> +56 9 9449 4294</p>
+  </div>
 
 </section>
 
@@ -197,4 +222,5 @@
 </footer>
 
 </body>
+</html>
 </html>
