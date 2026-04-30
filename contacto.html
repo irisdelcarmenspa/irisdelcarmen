@@ -70,19 +70,21 @@
 
     /* Marca de agua */
     .hero::before {
-      content: "";
-      position: absolute;
-      top: 52%;
-      left: 50%;
-      width: 520px;
-      height: 520px;
-      background-image: url('logo.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      opacity: 0.06;
-      transform: translate(-50%, -50%);
-    }
+  content: "";
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 520px;
+  height: 520px;
+  background-image: url('logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.06;
+  transform: translate(-50%, -50%);
+  pointer-events: none;   /* 👈 CLAVE */
+  z-index: 0;             /* 👈 CLAVE */
+}
 
     /* FRASE */
     .hero h2 {
