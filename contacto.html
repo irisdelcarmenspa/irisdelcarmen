@@ -158,11 +158,32 @@
 <section class="hero">
   <h2>Contacto</h2>
 
+  <p style="margin-bottom: 30px;">
+    Déjanos tus datos, nosotros te contactamos
+  </p>
+
+  <form action="https://formspree.io/f/mkoywkoa" method="POST" 
+        style="max-width: 500px; margin: 0 auto 40px; display: flex; flex-direction: column; gap: 12px;">
+
+    <input type="text" name="nombre" placeholder="Nombre" required style="padding:10px; border:1px solid #ccc;">
+
+    <input type="email" name="email" placeholder="Email" required style="padding:10px; border:1px solid #ccc;">
+
+    <input type="tel" name="telefono" placeholder="Teléfono" style="padding:10px; border:1px solid #ccc;">
+
+    <textarea name="mensaje" placeholder="Mensaje" rows="4" required style="padding:10px; border:1px solid #ccc;"></textarea>
+
+    <button type="submit" style="padding:12px; background:#0b2a5b; color:white; border:none; font-weight:600; cursor:pointer;">
+      Enviar
+    </button>
+
+  </form>
+
   <p>
     <strong>e-mail:</strong> roberto@irisdelcarmen.cl
   </p>
 
-<p>
+  <p>
     <strong>Telefono</strong> +56 9 9449 4294
   </p>
 
