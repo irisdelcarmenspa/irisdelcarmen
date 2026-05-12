@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -6,44 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 
+  <!-- Fuente más corporativa -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    html, body {
-      height: 100%;
+    body {
       margin: 0;
       font-family: 'Montserrat', Arial, sans-serif;
       background: #ffffff;
     }
 
-    /* 👇 CLAVE: layout en columna */
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-
     /* HEADER */
-    .top-header {
-      background-color: #ffffff;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
+  .top-header {
+  background-color: #ffffff;
+  height: 100px;              /* defines el alto exacto del header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;           /* evita desbordes raros */
+}
 
-    .top-header img {
-      max-height: 75%;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-    }
+.top-header img {
+  max-height: 75%;            /* el logo ocupa 3/4 del header */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
 
     /* NAV */
     nav {
@@ -52,7 +45,6 @@
       justify-content: flex-start;
       padding: 10px 60px;
       gap: 40px;
-      flex-shrink: 0;
     }
 
     nav a {
@@ -71,13 +63,12 @@
     .hero {
       position: relative;
       text-align: center;
-      padding: 20px 20px 30px;
+      padding: 100px 20px 110px;
       background-color: #e9e9e9;
       overflow: hidden;
-
-      flex: 1; /* 👈 ESTO elimina la franja blanca */
     }
 
+    /* Marca de agua */
     .hero::before {
       content: "";
       position: absolute;
@@ -93,58 +84,24 @@
       transform: translate(-50%, -50%);
     }
 
+    /* FRASE */
     .hero h2 {
       position: relative;
       color: #0b2a5b;
-      font-size: 26px;
+      font-size: 30px;
       font-weight: 700;
-      margin: 0 0 4px;
+      margin-bottom: 35px;
     }
 
+    /* TEXTO */
     .hero p {
       position: relative;
       color: #0b2a5b;
-      font-size: 15px;
-      margin: 0 auto 8px;
-      max-width: 650px;
+      font-size: 20px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.6;
       font-weight: 600;
-    }
-
-    /* FORM */
-    form {
-      position: relative;
-      max-width: 420px;
-      width: 100%;
-      margin: 6px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    input, textarea {
-      padding: 5px;
-      border: 1px solid #ccc;
-      font-size: 13px;
-    }
-
-    textarea {
-      height: 50px;
-      resize: none;
-    }
-
-    button {
-      padding: 7px;
-      background: #0b2a5b;
-      color: white;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .contact-info {
-      font-size: 12.5px;
-      margin-top: 5px;
-      line-height: 1.2;
     }
 
     /* FOOTER */
@@ -152,13 +109,12 @@
       background-color: #0b2a5b;
       color: white;
       text-align: center;
-      padding: 10px;
-      font-size: 12.5px;
+      padding: 12px;
+      font-size: 13px;
       letter-spacing: 0.3px;
-      flex-shrink: 0;
     }
 
-    /* RESPONSIVE */
+    /* RESPONSIVE FINO */
     @media (max-width: 768px) {
       nav {
         padding: 10px 20px;
@@ -166,7 +122,7 @@
       }
 
       .hero {
-        padding: 60px 15px;
+        padding: 70px 15px;
       }
 
       .hero h2 {
@@ -182,42 +138,38 @@
         height: 300px;
       }
     }
-
   </style>
 </head>
 
 <body>
 
+<!-- LOGO -->
 <div class="top-header">
   <img src="logo.png" alt="Iris del Carmen">
 </div>
 
+<!-- NAVBAR -->
 <nav>
   <a href="index.html">INICIO</a>
+  <a href="que hacemos.html">QUE HACEMOS</a>
   <a href="contacto.html">CONTACTO</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-
   <h2>Contacto</h2>
 
-  <p>Déjanos tus datos, nosotros te contactamos</p>
+  <p>
+    <strong>e-mail:</strong> roberto@irisdelcarmen.cl
+  </p>
 
-  <form action="https://formspree.io/f/mkoywkoa" method="POST">
-    <input type="text" name="nombre" placeholder="Nombre" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="tel" name="telefono" placeholder="Teléfono">
-    <textarea name="mensaje" placeholder="Mensaje" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-
-  <div class="contact-info">
-    <p><strong>e-mail:</strong> roberto@irisdelcarmen.cl</p>
-    <p><strong>Teléfono:</strong> +56 9 9449 4294</p>
-  </div>
+<p>
+    <strong>Telefono</strong> +56 9 9449 4294
+  </p>
 
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 Iris del Carmen</p>
 </footer>
